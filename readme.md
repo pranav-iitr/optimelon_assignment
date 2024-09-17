@@ -19,7 +19,7 @@ This project includes a React component that dynamically injects a script into t
 ### Frontend
 
 ```bash
-cd my-app
+cd frontend
 yarn 
 yarn dev
 ```
