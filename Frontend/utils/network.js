@@ -1,0 +1,1 @@
+export const base_Api = 'http://localhost:5000';
