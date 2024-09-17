@@ -32,7 +32,7 @@ scriptRouter.get('/generate/:projectId', async (req, res) => {
 
   const scriptContent = `
   (function() {
-  const allowedDomain = 'localhost:3000';
+  const allowedDomain = '${project.domain}';
   const currentDomain = window.location.hostname;
   const urlParams = new URLSearchParams(window.location.search);
   const variationParam = urlParams.get('variation');
@@ -44,7 +44,7 @@ scriptRouter.get('/generate/:projectId', async (req, res) => {
 
 
   // Make API call to check if the project exists
-  fetch('http://localhost:5000/api/projects/30c23235-d510-4072-815e-daf46be13b8c')
+  fetch('${protocol}://${hostname}/api/projects/${projectId}')
     .then(response => {
       if (!response.ok) {
         throw new Error('Project not found or invalid response');
